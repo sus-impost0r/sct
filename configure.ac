@@ -9,7 +9,7 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_LANG([C])
 
-AM_INIT_AUTOMAKE([-Wall foreign])
+AM_INIT_AUTOMAKE([-Wall foreign dist-xz])
 
 
 # Checks for programs.
@@ -26,6 +26,6 @@ AC_C_INLINE
 
 # Checks for library functions.
 AC_CHECK_FUNCS([strtoumax getrandom])
-AC_CHECK_DECLS([getrandom],,,[sys/random.h])
+AC_CHECK_DECLS([getrandom],[],[],[#include <sys/random.h>])
 
 AC_OUTPUT
