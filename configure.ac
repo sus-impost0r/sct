@@ -1,8 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.71])
-AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_INIT([sct], [0.0.1], [])
 AC_CONFIG_SRCDIR([src/getnrand.c])
 AC_CONFIG_HEADERS([config.h])
 
@@ -17,12 +16,13 @@ AM_INIT_AUTOMAKE([-Wall foreign])
 AC_PROG_CC
 
 # Checks for header files.
-AC_CHECK_HEADERS([fcntl.h inttypes.h stdint.h unistd.h])
+AC_CHECK_HEADERS([fcntl.h inttypes.h stdint.h unistd.h limits.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_SIZE_T
 AC_TYPE_SSIZE_T
 AC_TYPE_UINT64_T
+AC_C_INLINE
 
 # Checks for library functions.
 AC_CHECK_FUNCS([strtoumax getrandom])
