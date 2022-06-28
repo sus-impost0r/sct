@@ -23,7 +23,8 @@ int main(int argc, char **argv) {
     } u;
 
     if(random_buf(u.c, sizeof(uint64_t)) > 0) {
-        if(printf("%"PRIu64"\n", u.i) > 0) return 0;
+	
+        if(printf("%"PRIu64"\n", (u.i % max) + min) > 0) return 0;
         perror("printf");
         return 1;
     }
